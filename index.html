@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0047AB">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Swaran">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAD5ElEQVR4nO3cUY7TMBSG0RSxN1gAu5xZALuDN4goUpP+jn0dn/OIGKlz/em6pS2P7dvHBu/6MvoBMDcBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARARH5OvoBFPXr549//uTx/XPIIynu4f8H2nvu5pmS9lxhfx2p5/hfW4QNtG3vNmEVbTbQFmwUq2gTEKHVAwq3iCW0dEBNjn/xhpYOiJyAiKwbUMOrZ+VbbN2AaEJARAREREBEBEREQETWDajhe+krvy2/bkA0ISAiSwfU5OpZ+f7aFg9oi49/8Xo2ARES0PtbxPrZfKh+7/ib6tL5wwb662AW6tmzgf7PN1MPEhAR343fNl8sDKy4ga77BOqCSa0SUP+PLS8S080DqvBx93uXdM+AKnTz7JYl3Sqgmt08u1NJNwlolnT27pHR9AHNmM7e7BlNHNDs6ezNm9GUAd0pnb0ZM5osoLumszdXRjO9G79CPdtsv+YcG2iumbYyxSqaYAOtWc82yS9eegNNMcEOKq+iuhtIPX9UHkXRgCqPbIiyAyl3hZWdVBHVrrNaG0g9L1UbUaGAqo2mrFKDqhJQqaHUV2dcJQKqM46JFBna+ICKDGJGFUY3OKAKI5ja8AGODGj4L38PY8c4LCD1NDRwmGMCUk9zo0Y6/kk0UxsQkPVzkSGD7R2Qei7Vf7xdA1JPB52H7DkQkX4BWT/d9Bx1p4DU01m3gbvCiPQIyPoZos/YLw9IPQN1GL4rjMi1AVk/w119BDYQkQsDsn6KuPQgbCAiVwVk/ZRy3XHYQEQuCcj6KeiiQ7GBiLQPyPop64qjsYGICIhI44DcX8U1PyAbiIiAiLQMyP01hbbHZAMRERCRZgG5vybS8LBsICICIiIgIm0C8gRoOq2OzAYiIiAiAiIiICICItIgIC/BJtXk4GwgIgIiIiAiAiIiICICIiIgIgIi8ti+fYx+DEzMBiIiICICIiIgIgIiIiAiX9/7MZ8BuqXH98/TP3L234Gkc3unMjp3halnBadO+URA6lnH8bM+GpB6VnPwxA8FpJ41HTl3L+OJvA7I+lnZy9O3gYgIiIiAiAiIiICIvA7ojTfYuI2Xp28DETkUkCW0piPnfnQDaWg1B0/8xBWmoXUcP+tzz4E0tIJTp/zmN1O9QXZLPT7SCntexhMREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARARH5DZu8D9GHf5g3AAAAAElFTkSuQmCC">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAD5ElEQVR4nO3cUY7TMBSG0RSxN1gAu5xZALuDN4goUpP+jn0dn/OIGKlz/em6pS2P7dvHBu/6MvoBMDcBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARARH5OvoBFPXr549//uTx/XPIIynu4f8H2nvu5pmS9lxhfx2p5/hfW4QNtG3vNmEVbTbQFmwUq2gTEKHVAwq3iCW0dEBNjn/xhpYOiJyAiKwbUMOrZ+VbbN2AaEJARAREREBEBEREQETWDajhe+krvy2/bkA0ISAiSwfU5OpZ+f7aFg9oi49/8Xo2ARES0PtbxPrZfKh+7/ib6tL5wwb662AW6tmzgf7PN1MPEhAR343fNl8sDKy4ga77BOqCSa0SUP+PLS8S080DqvBx93uXdM+AKnTz7JYl3Sqgmt08u1NJNwlolnT27pHR9AHNmM7e7BlNHNDs6ezNm9GUAd0pnb0ZM5osoLumszdXRjO9G79CPdtsv+YcG2iumbYyxSqaYAOtWc82yS9eegNNMcEOKq+iuhtIPX9UHkXRgCqPbIiyAyl3hZWdVBHVrrNaG0g9L1UbUaGAqo2mrFKDqhJQqaHUV2dcJQKqM46JFBna+ICKDGJGFUY3OKAKI5ja8AGODGj4L38PY8c4LCD1NDRwmGMCUk9zo0Y6/kk0UxsQkPVzkSGD7R2Qei7Vf7xdA1JPB52H7DkQkX4BWT/d9Bx1p4DU01m3gbvCiPQIyPoZos/YLw9IPQN1GL4rjMi1AVk/w119BDYQkQsDsn6KuPQgbCAiVwVk/ZRy3XHYQEQuCcj6KeiiQ7GBiLQPyPop64qjsYGICIhI44DcX8U1PyAbiIiAiLQMyP01hbbHZAMRERCRZgG5vybS8LBsICICIiIgIm0C8gRoOq2OzAYiIiAiAiIiICICItIgIC/BJtXk4GwgIgIiIiAiAiIiICICIiIgIgIi8ti+fYx+DEzMBiIiICICIiIgIgIiIiAiX9/7MZ8BuqXH98/TP3L234Gkc3unMjp3halnBadO+URA6lnH8bM+GpB6VnPwxA8FpJ41HTl3L+OJvA7I+lnZy9O3gYgIiIiAiAiIiICIvA7ojTfYuI2Xp28DETkUkCW0piPnfnQDaWg1B0/8xBWmoXUcP+tzz4E0tIJTp/zmN1O9QXZLPT7SCntexhMREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARARH5DZu8D9GHf5g3AAAAAElFTkSuQmCC">
+<title>Swaran Food Plaza – Order for Pickup</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700;800&display=swap">
+<style>
+:root{--bg:#ffffff;--card:#ffffff;--ink:#000080;--mute:#6D8196;--red:#000080;--blue:#0047AB;--brand:#0047AB;--yellow:#82C8E5;--line:#82C8E5;--shadow:rgba(0,0,128,.22);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000080;--card:#0047AB;--ink:#ffffff;--mute:#82C8E5;--red:#82C8E5;--blue:#82C8E5;--brand:#0047AB;--yellow:#82C8E5;--line:#6D8196;--shadow:rgba(0,0,0,.45)}}
+:root[data-theme="dark"]{--bg:#000080;--card:#0047AB;--ink:#ffffff;--mute:#82C8E5;--red:#82C8E5;--blue:#82C8E5;--brand:#0047AB;--yellow:#82C8E5;--line:#6D8196;--shadow:rgba(0,0,0,.45)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html{overscroll-behavior-y:none}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 Nunito,system-ui,sans-serif;padding-bottom:90px}
+h1,h2,h3{font-family:"Baloo 2",system-ui,sans-serif;margin:0}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+.hero{position:relative;background:var(--brand) radial-gradient(circle,rgba(255,255,255,.13) 0 2px,transparent 3px) 0 0/26px 26px;color:#fff;text-align:center;padding:28px 16px 46px}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:16px;background:radial-gradient(circle at 10px 0,transparent 10px,var(--bg) 11px) 0 0/20px 16px repeat-x}
+.hero h1{font-size:42px;line-height:1;font-weight:800;text-shadow:3px 3px 0 var(--red)}
+.hero p{margin:8px 0 0;font-weight:700;color:var(--yellow);font-size:17px}
+.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.chips span{background:rgba(255,255,255,.16);border-radius:99px;padding:5px 12px;font-size:13px;font-weight:700}
+.wrap{max-width:720px;margin:0 auto;padding:0 14px}
+.ask{font-size:24px;margin:18px 0 12px;color:var(--ink)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{border:0;border-radius:20px;padding:16px 12px;text-align:left;color:#fff;min-height:128px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 6px 14px var(--shadow)}
+.tile .em{font-size:44px;line-height:1}
+.tile b{font-family:"Baloo 2",sans-serif;font-size:21px;line-height:1.1;display:block}
+.tile small{opacity:.9;font-weight:700}
+.bk{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--brand);color:#fff;display:flex;align-items:center;gap:10px;padding:10px 14px}
+.bk button{background:rgba(255,255,255,.18);border:0;color:#fff;border-radius:99px;padding:8px 14px;font-weight:800;min-height:40px}
+.bk h2{font-size:24px;color:#fff}
+.sub{display:flex;gap:8px;overflow-x:auto;padding:10px 14px}
+.sub button{flex:none;border:2px solid var(--brand);background:transparent;color:var(--blue);border-radius:99px;padding:6px 14px;font-weight:800}
+h3{font-size:21px;color:var(--red);margin:18px 0 0}
+.note{color:var(--mute);font-size:13px;margin:2px 0 0}
+.row{background:var(--card);border-radius:16px;padding:13px;margin-top:10px;box-shadow:0 3px 10px var(--shadow)}
+.row b{font-size:17px}.row small{display:block;color:var(--ink);opacity:.72;font-size:13px;margin-top:2px}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.opts button{border:0;background:var(--yellow);color:#000080;font-weight:800;border-radius:12px;padding:9px 14px;min-height:44px}
+.opts button:active{background:var(--brand);color:#fff}
+.bar{position:fixed;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:var(--bg);z-index:6;border-top:1px solid var(--line)}
+.bar button{width:100%;font-weight:800;font-size:17px;background:var(--brand);color:#fff;border:0;border-radius:14px;padding:14px 16px;display:flex;justify-content:space-between}
+.bar button:disabled{opacity:.55;cursor:default}
+dialog{border:0;border-radius:20px 20px 0 0;padding:0;width:100%;max-width:560px;margin:auto auto 0;background:var(--bg);color:var(--ink);max-height:92vh}
+dialog::backdrop{background:rgba(0,0,0,.55)}
+.sheet{padding:16px}
+.close{float:right;background:none;border:0;font-size:28px;color:var(--ink)}
+.line{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 0;border-bottom:1px solid var(--line)}
+.qty{display:flex;align-items:center;gap:10px}
+.qty button{width:36px;height:36px;border-radius:50%;border:0;background:var(--brand);color:#fff;font-size:20px;font-weight:800}
+label{display:block;font-weight:700;margin-top:12px}
+input,select{width:100%;font:inherit;padding:11px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);margin-top:4px}
+.total{display:flex;justify-content:space-between;font-weight:800;font-size:20px;margin-top:14px}
+.go{width:100%;margin-top:14px;font-weight:800;font-size:17px;background:var(--brand);color:#fff;border:0;border-radius:12px;padding:14px}
+.err{color:var(--red);font-weight:700;margin-top:8px;min-height:20px}
+footer{text-align:center;color:var(--mute);font-size:13px;padding:24px 12px}
+footer a{color:var(--blue)}
+
+#login{position:fixed;inset:0;z-index:20;background:radial-gradient(120% 80% at 50% 0%,#0047AB 0%,#000080 75%);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:24px 22px calc(24px + env(safe-area-inset-bottom,0px));overflow:auto}
+#login[hidden]{display:none}
+.fl{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.fl i{position:absolute;font-style:normal;opacity:.18;animation:fl 9s ease-in-out infinite}
+.tabs{display:flex;background:rgba(255,255,255,.14);border-radius:14px;padding:4px;margin-bottom:16px}
+.tabs button{flex:1;background:none;border:0;color:#fff;font-weight:800;padding:10px;border-radius:10px;font-size:16px}
+.tabs .on{background:#fff;color:#000080}
+.pwr{display:flex;gap:8px}.pwr input{flex:1}.pwr button{margin:6px 0 14px;background:#fff;color:#000080;border:0;border-radius:10px;font-weight:800;padding:0 14px}
+@keyframes fl{50%{transform:translateY(-22px) rotate(8deg)}}
+.lcard{position:relative;max-width:400px;width:100%;margin:0 auto;text-align:center}
+.logo{width:88px;height:88px;border-radius:28px;background:#fff;display:grid;place-items:center;margin:0 auto 18px;box-shadow:0 14px 34px rgba(0,0,0,.35)}
+#login h1{font-size:40px;line-height:1;font-weight:800;color:#fff}
+#login p.t{color:#82C8E5;font-weight:700;margin:8px 0 24px}
+.glass{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-radius:24px;padding:20px;text-align:left}
+.glass label{color:#fff;margin-top:0;font-size:14px}
+.glass input{background:#fff;color:#000080;border:0;margin:6px 0 14px;font-size:17px;padding:14px}
+.ph{display:flex;gap:8px}.ph span{background:#fff;color:#000080;font-weight:800;border-radius:10px;padding:14px 12px;margin:6px 0 14px;font-size:17px}
+.lbtn{width:100%;background:#fff;color:#000080;border:0;border-radius:14px;padding:15px;font-weight:800;font-size:18px;box-shadow:0 8px 20px rgba(0,0,0,.28)}
+.lbtn:active{transform:scale(.98)}
+.skip{background:none;border:0;color:#82C8E5;font-weight:800;margin-top:12px;padding:10px;width:100%;font-size:15px}
+.lerr{color:#82C8E5;font-weight:800;min-height:20px;margin:-4px 0 8px;font-size:14px}
+.hi{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;font-weight:800;font-size:16px}
+.lo{background:rgba(255,255,255,.18);border:0;color:#fff;border-radius:99px;padding:7px 14px;font-weight:800;min-height:36px}
+.tile{position:relative;overflow:hidden;transition:transform .15s}
+.tile::after{content:"";position:absolute;right:-34px;top:-34px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.14)}
+.tile:active{transform:scale(.96)}
+#home,#cat{animation:in .35s ease}
+@keyframes in{from{opacity:0;transform:translateY(10px)}}
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:#000080;color:#fff;border:1px solid #82C8E5;border-radius:99px;padding:9px 18px;font-weight:800;opacity:0;transition:.25s;z-index:9;pointer-events:none;white-space:nowrap;max-width:92vw;overflow:hidden;text-overflow:ellipsis}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.seg{display:flex;background:var(--line);border-radius:14px;padding:4px;margin:12px 0 4px}
+.seg button{flex:1;border:0;background:none;color:var(--ink);font-weight:800;padding:11px 6px;border-radius:11px;font-size:15px}
+.seg button.on{background:var(--brand);color:#fff}
+.sumr{display:flex;justify-content:space-between;margin-top:8px;font-weight:700}
+textarea{width:100%;font:inherit;padding:11px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);margin-top:4px}
+</style>
+</head>
+<body>
+<div id="login" hidden><div class="fl" aria-hidden="true"><i style="left:6%;top:7%;font-size:54px">🍕</i><i style="right:8%;top:13%;font-size:44px;animation-delay:-3s">🍔</i><i style="left:9%;bottom:10%;font-size:48px;animation-delay:-5s">🥟</i><i style="right:6%;bottom:16%;font-size:56px;animation-delay:-2s">🌯</i></div>
+<div class="lcard"><div class="logo"><svg width="54" height="54" viewBox="0 0 52 52" aria-hidden="true"><path d="M6 36a20 20 0 0 1 40 0z" fill="#0047AB"/><rect x="3" y="38" width="46" height="5" rx="2.5" fill="#000080"/><circle cx="26" cy="12" r="3.5" fill="#000080"/></svg></div>
+<h1>Swaran Food Plaza</h1><p class="t">Pure Food. Pure Comfort.</p>
+<div class="glass"><div class="tabs"><button id="tL" class="on">Log in</button><button id="tS">Sign up</button></div>
+<div id="fN" hidden><label for="ln">Your name</label><input id="ln" autocomplete="name" placeholder="e.g. Rahul Sharma"></div>
+<div id="fP"><label for="lp" id="lpl">Mobile number or email</label><input id="lp" autocomplete="username" placeholder="Mobile number or email"></div>
+<div id="fE" hidden><label for="le">Email</label><input id="le" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com"></div>
+<div id="fO" hidden><label for="otp">6-digit code sent to your mobile</label><input id="otp" inputmode="numeric" maxlength="6" autocomplete="one-time-code" placeholder="••••••"></div>
+<div id="fW"><label for="pw" id="pwl">Password</label><div class="pwr"><input id="pw" type="password" autocomplete="current-password"><button type="button" id="eye">Show</button></div></div>
+<div class="lerr" id="lerr" role="alert"></div><button class="lbtn" id="lgo">Log in</button></div>
+<button class="skip" id="forgot">Forgot password?</button>
+<button class="skip" id="resend" hidden>Resend code</button>
+<button class="skip" id="lskip">Skip for now, browse the menu</button>
+<p id="dn" style="color:#82C8E5;font-size:13px;font-weight:700;margin:6px 0 0">Preview mode: accounts are saved on this phone only and no SMS code is sent. Real accounts need the server.</p></div></div>
+<div class="toast" id="toast" role="status"></div>
+<div id="home">
+ <div class="hero"><div class="hi"><span id="hiT"></span><button class="lo" id="lo">Log out</button></div><h1>Swaran Food Plaza</h1><p>Pure Food. Pure Comfort.</p>
+ <div class="chips"><span>Order online, pick up in 15–25 min</span><span>Fresh pizza base made on the spot</span></div></div>
+ <div class="wrap"><h2 class="ask">What are you craving?</h2><div class="grid" id="grid"></div></div>
+</div>
+<div id="cat" hidden>
+ <div class="bk"><button id="back">‹ Menu</button><h2 id="ct"></h2></div>
+ <div class="sub" id="sub"></div>
+ <div class="wrap" id="items"></div>
+</div>
+<footer>Pay at the counter when you pick up.<br>Powayan Road, Banda, Shahjahanpur · <a href="tel:+918604933003">8604933003</a></footer>
+<div class="bar"><button id="cartBtn" disabled><span id="cCount">Your cart is empty</span><span id="cTotal"></span></button></div>
+
+<dialog id="dlg"><div class="sheet">
+<button class="close" id="x" aria-label="Close">×</button>
+<h2 style="color:var(--blue)">Your order</h2>
+<div id="lines"></div>
+<div class="seg"><button id="mP" class="on">🏪 Pickup</button><button id="mD">🛵 Home delivery</button></div>
+<div id="dBox" hidden><label for="km">How far is your home?</label><select id="km"></select>
+<label for="addr">Delivery address</label><textarea id="addr" rows="3" maxlength="200" placeholder="House no., street, landmark"></textarea>
+<p class="note" id="dMin"></p></div>
+<div class="sumr"><span>Items</span><span id="sub"></span></div>
+<div class="sumr" id="feeR" hidden><span>Delivery fee</span><span id="fee"></span></div>
+<div class="total"><span>Total</span><span id="sum"></span></div>
+<p class="note" id="who2"></p>
+<label for="tm" id="tmL">Pickup time</label>
+<select id="tm"><option>As soon as ready (15–25 min)</option><option>In 30 minutes</option><option>In 45 minutes</option><option>In 1 hour</option></select>
+<div class="err" id="err" role="alert"></div>
+<button class="go" id="send">Place pickup order</button>
+</div></dialog>
+
+<dialog id="done"><div class="sheet"><button class="close" id="dx" aria-label="Close">×</button><h2 style="color:var(--blue)" id="dh"></h2><p id="dp"></p><div class="total"><span>Status</span><span id="ds"></span></div></div></dialog>
+
+<script>
+var S=["Regular","Medium","Large"];
+var C=[
+{id:"pizza",t:"Pizza",e:"🍕",c:"#0047AB",g:[
+["Global Pizzas","Fresh base made on the spot",S,[
+["Double Cheese Pizza","",[169,269,449]],
+["Classic Cheesy Pizza","Capsicum, tomato, onion",[169,269,449]],
+["Cheesy Makhani Pizza","Mushroom, capsicum, tomato, onion, sweet corn",[189,299,469]],
+["Mushroom Cheesy Pizza","Mushroom, capsicum, tomato, onion, sweet corn",[169,269,449]],
+["Paneer Veggie Pizza","Paneer, capsicum, tomato, onion, sweet corn",[179,289,479]],
+["Cheesy Black Olive Magic","Black olive, capsicum, tomato, onion, sweet corn",[199,309,479]],
+["Maxicana Green Pizza","Black olive, jalapeños, mushroom, capsicum",[209,339,499]],
+["Deluxe Veggie Pizza","Black olive, capsicum, tomato, onion, sweet corn, mushroom",[209,329,499]],
+["Farm House Pizza","Black olive, capsicum, tomato, onion, sweet corn, mushroom, jalapeños, paneer",[219,339,499]],
+["Tandoori Paneer Veggie Pizza","Black olive, capsicum, tomato, onion, sweet corn, mushroom, jalapeños, paneer",[239,359,589]],
+["Spicy Green Paradise Pizza","Black olive, capsicum, red paprika, mushroom, jalapeños, paneer",[269,419,589]],
+["Pan Pizza","",[249,349,449]],
+["Special Four Cheese Pizza","Medium only",[null,439,null]],
+["Special Thin Crust Pizza","Medium only",[null,429,null]],
+["Four Variety Family Pizza (16\")","",719]]],
+["Classic Pizzas","Single cheese pizzas and add-ons",S,[
+["Single Cheese Pizza","",[99,199,299]],
+["Single Cheese Sweet Corn","",[109,199,309]],
+["Single Cheese Tomato","",[109,199,309]],
+["Cheese Burst","Add-on",[60,90,110]],
+["Extra Cheese","Add-on",[40,50,80]],
+["Extra Topping","Add-on",[40,50,60]]]],
+["Kids Pizzas","",0,[["Tomato & Capsicum","",79],["Onion, Capsicum & Sweet Corn","",89],["Paneer & Onion","",99]]],
+["Kulhad Pizza","",0,[["Veg Kulhad Pizza","",50],["Tandoori Kulhad Pizza","",70],["Paneer Kulhad Pizza","",120]]],
+["Garlic Bread","",0,[["Garlic Bread with Cheese","",90],["Garlic Bread with Cheese & Sweet Corn","",110],["Garlic Bread with Cheese & Veggies","",130]]]]},
+{id:"burger",t:"Burgers",e:"🍔",c:"#000080",g:[["Burgers","",0,[["Pocket Friendly Burger","",50],["Veg Supreme Burger","",69],["Genius Burger","",79],["Finger Overload Burger","",89],["Special Burger","",99],["Special Burger with Patty","",129]]]]},
+{id:"wrap",t:"Wraps",e:"🌯",c:"#82C8E5",dk:1,g:[["Wraps","",0,[["Classic Wrap","",70],["Tosho Wrap","",80],["Paneer Wrap","",90],["Punjabi Wrap","",100],["Special Wrap","",110]]]]},
+{id:"meals",t:"Combo Meals",e:"🍟",c:"#6D8196",g:[["Combo Meals","All meals come with french fries and Coke",0,[
+["Happy Meal","Pocket Friendly Burger + fries + Coke 250ml",139],
+["Royal Meal","Genius Burger + fries + Coke 250ml",169],
+["Jumbo Meal (8\")","Deluxe Veggie Pizza 8\" + fries + Coke 750ml",309],
+["Jumbo Meal (10\")","Deluxe Veggie Pizza 10\" + fries + Coke 750ml",419],
+["Supreme Meal (8\")","Any pizza 8\" + fries + Coke 750ml",339],
+["Supreme Meal (10\")","Any pizza 10\" + fries + Coke 1 litre",519]]]]},
+{id:"momos",t:"Momos",e:"🥟",c:"#0047AB",g:[["Momos","Steamed",0,[["Veg Momos","",70],["Paneer Momos","",90],["Chilly Momos","",110],["Gravy Momos","",120],["Tandoori Momos","",100],["Crunchy Momos (8 pcs)","",140]]]]},
+{id:"paratha",t:"Parathas",e:"🫓",c:"#000080",g:[["Parathas","",0,[["Aloo Paratha","",70],["Aloo Onion Paratha","",90],["Mix Paratha","",90],["Paneer Paratha","",100],["Cheese Paratha","",100]]]]},
+{id:"rice",t:"Rice & Breads",e:"🍚",c:"#82C8E5",dk:1,g:[
+["Rice","",0,[["Plain Rice","",50],["Jeera Rice","",65],["Matar Pulao","",80],["Veg Pulao","",100]]],
+["Breads","",0,[["Tawa Roti","",10],["Tandoori Roti","",10],["Ghee Roti","",15],["Missi Roti","",25],["Laccha Paratha","",30],["Plain Naan","",30],["Butter Naan","",40]]],
+["Papad & Thali","",0,[["Plain Papad","",15],["Masala Papad","",20],["Thali","",180],["Special Thali","",220]]]]}
+];
+var cart={},cur=null,$=function(i){return document.getElementById(i)};
+function rs(n){return "₹"+n}
+function esc(s){return s.replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function cnt(c){var n=0;c.g.forEach(function(g){n+=g[3].length});return n}
+function drawGrid(){$("grid").innerHTML=C.map(function(c,i){
+ return '<button class="tile" data-go="'+c.id+'" style="background:'+c.c+(c.dk?';color:#000080':'')+'"><span class="em" aria-hidden="true">'+c.e+'</span><span><b>'+c.t+'</b><small>'+cnt(c)+' items</small></span></button>'}).join("")}drawGrid();
+$("grid").onclick=function(e){var b=e.target.closest("button");if(b)location.hash=b.dataset.go};
+$("back").onclick=function(){location.hash=""};
+function route(){
+ var id=location.hash.slice(1),c=C.filter(function(x){return x.id===id})[0];
+ if(!c){cur=null;$("home").hidden=false;$("cat").hidden=true;return}
+ cur=c;$("home").hidden=true;$("cat").hidden=false;
+ $("ct").textContent=c.e+" "+c.t;
+ var h="",s="";
+ c.g.forEach(function(g,gi){
+  h+='<div id="g'+gi+'">'+(c.g.length>1||g[1]?'<h3>'+g[0]+'</h3>':'')+(g[1]?'<p class="note">'+g[1]+'</p>':'');
+  g[3].forEach(function(it,j){
+   h+='<div class="row"><b>'+esc(it[0])+'</b>'+(it[1]?'<small>'+esc(it[1])+'</small>':'')+'<div class="opts">';
+   if(Array.isArray(it[2])){it[2].forEach(function(p,k){if(p!=null)h+='<button data-a="'+gi+','+j+','+k+'">'+g[2][k]+' '+rs(p)+' +</button>'})}
+   else h+='<button data-a="'+gi+','+j+',-1">Add '+rs(it[2])+' +</button>';
+   h+='</div></div>'});
+  h+='</div>';
+  if(c.g.length>1)s+='<button data-j="g'+gi+'">'+g[0]+'</button>';
+ });
+ $("items").innerHTML=h;$("sub").innerHTML=s;$("sub").hidden=!s;
+ window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route);route();
+$("sub").onclick=function(e){var b=e.target.closest("button");if(b)$(b.dataset.j).scrollIntoView({behavior:"smooth",block:"start"})};
+$("items").onclick=function(e){
+ var b=e.target.closest("button");if(!b)return;
+ var a=b.dataset.a.split(",").map(Number),g=cur.g[a[0]],it=g[3][a[1]],size=a[2]<0?"":g[2][a[2]],price=a[2]<0?it[2]:it[2][a[2]],key=it[0]+"|"+size;
+ if(cart[key])cart[key].q++;else cart[key]={name:it[0],size:size,price:price,q:1,ref:{c:cur.id,g:a[0],i:a[1],s:a[2]}};
+ upd();toast("Added "+it[0]+" ✓");
+};
+function totals(){var q=0,t=0;for(var k in cart){q+=cart[k].q;t+=cart[k].q*cart[k].price}return{q:q,t:t}}
+function upd(){
+ var s=totals();
+ $("cCount").textContent=s.q?("View cart · "+s.q+(s.q>1?" items":" item")):"Your cart is empty";
+ $("cTotal").textContent=s.q?rs(s.t):"";
+ $("cartBtn").disabled=!s.q;
+ if($("dlg").open)drawLines();
+}
+function drawLines(){
+ var s=totals(),h="";
+ if(!s.q){$("dlg").close();return}
+ for(var k in cart){var c=cart[k];
+  h+='<div class="line"><div><b>'+esc(c.name)+'</b><small style="display:block;color:var(--mute)">'+(c.size?c.size+" · ":"")+rs(c.price)+'</small></div><div class="qty"><button data-k="'+esc(k)+'" data-d="-1" aria-label="Remove one">−</button><b>'+c.q+'</b><button data-k="'+esc(k)+'" data-d="1" aria-label="Add one">+</button></div></div>'}
+ $("lines").innerHTML=h;sums();
+}
+$("lines").onclick=function(e){
+ var b=e.target.closest("button");if(!b)return;
+ var c=cart[b.dataset.k];c.q+=Number(b.dataset.d);
+ if(c.q<1)delete cart[b.dataset.k];
+ upd();
+};
+$("cartBtn").onclick=function(){drawLines();$("err").textContent="";$("dlg").showModal()};
+$("x").onclick=function(){$("dlg").close()};
+
+
+var U=null;
+function toast(m){var t=$("toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(function(){t.classList.remove("on")},1400)}
+function ld(){try{return JSON.parse(localStorage.getItem("sfpU")||"null")}catch(e){return null}}
+function sv(u){try{if(u)localStorage.setItem("sfpU",JSON.stringify(u));else localStorage.removeItem("sfpU")}catch(e){}}
+function who(){
+ $("hiT").textContent=U&&U.name?"Hi, "+U.name.split(" ")[0]+" 👋":"Welcome 👋";
+ $("lo").textContent=U?"Log out":"Log in";
+ $("who2").textContent=U?("Ordering as "+U.name+" · +91 "+U.phone):"Log in to place your order";
+}
+function showLogin(){$("login").hidden=false;document.body.style.overflow="hidden";$("lerr").textContent=""}
+function hideLogin(){$("login").hidden=true;document.body.style.overflow=""}
+T=lt();U=ld();if(!T&&!(U&&U.demo))U=null;who();if(!U)showLogin();
+
+$("lskip").onclick=hideLogin;
+
+var DEMO=true,T,poll,step=1,rt,SL={"new":"Order received","preparing":"Being prepared","ready":"Ready for pickup","done":"Picked up","cancelled":"Cancelled"};
+function lt(){try{return localStorage.getItem("sfpT")}catch(e){return null}}
+function st(t){try{if(t)localStorage.setItem("sfpT",t);else localStorage.removeItem("sfpT")}catch(e){}}
+function api(u,o){o=o||{};var h={"Content-Type":"application/json"};if(T)h.Authorization="Bearer "+T;
+ return fetch(u,{method:o.b?"POST":"GET",headers:h,body:o.b?JSON.stringify(o.b):undefined}).then(function(r){
+  return r.json().then(function(d){
+   if(r.status==401&&T){T=null;st(null);U=null;sv(null);who();showLogin()}
+   if(!r.ok)throw new Error(d.error||"Something went wrong");return d})})}
+var mode="login",step=1,rt,EM=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+function err(x){$("lerr").textContent=x}
+function setMode(x){mode=x;step=1;$("pw").value="";$("otp").value="";err("");draw()}
+function draw(){
+ var L=mode=="login",S=mode=="signup",R=mode=="reset",two=step==2&&!L&&!DEMO;
+ $("tL").classList.toggle("on",L);$("tS").classList.toggle("on",S);
+ $("fN").hidden=!S;$("fE").hidden=!S;$("fO").hidden=!two;$("fW").hidden=R&&step==1;
+ $("lpl").textContent=L?"Mobile number or email":"Mobile number";
+ $("pwl").textContent=L?"Password":R?"New password":"Create a password (8+ characters)";
+ $("pw").autocomplete=L?"current-password":"new-password";
+ $("lgo").textContent=L?"Log in":(S&&(DEMO||two))?"Create account":R&&two?"Reset password":"Send code";
+ $("forgot").hidden=!L||DEMO;$("resend").hidden=!two;$("dn").hidden=!DEMO;
+ ["ln","lp","le"].forEach(function(i){$(i).readOnly=two});
+}
+function cool(){var s=30;clearInterval(rt);$("resend").disabled=true;$("resend").textContent="Resend code in 30s";
+ rt=setInterval(function(){s--;$("resend").textContent=s>0?"Resend code in "+s+"s":"Resend code";if(s<=0){clearInterval(rt);$("resend").disabled=false}},1000)}
+function run(pr,ok){$("lgo").disabled=true;pr.then(ok).catch(function(e){err(e.message)}).then(function(){$("lgo").disabled=false})}
+function fin(d){T=d.token||null;st(T);U=d.user;sv(U);who();hideLogin();toast("Welcome, "+U.name.split(" ")[0]+"!");setMode("login")}
+function h256(x){return window.crypto&&crypto.subtle?crypto.subtle.digest("SHA-256",new TextEncoder().encode(x)).then(function(b){return Array.from(new Uint8Array(b)).map(function(y){return y.toString(16).padStart(2,"0")}).join("")}):Promise.resolve(btoa(x))}
+function acc(){try{return JSON.parse(localStorage.getItem("sfpA")||"{}")}catch(e){return{}}}
+function body(){return{purpose:mode,phone:$("lp").value.replace(/\D/g,""),name:$("ln").value.trim().replace(/\s+/g," "),email:$("le").value.trim()}}
+$("lgo").onclick=function(){
+ err("");var id=$("lp").value.trim(),pw=$("pw").value,b=body();
+ if(mode=="login"){
+  if(!id||!pw){err("Enter your mobile or email, and your password.");return}
+  if(!DEMO)return run(api("/api/login",{b:{id:id,password:pw}}),fin);
+  var a=acc(),u=null;for(var k in a)if(k==id.replace(/\D/g,"")||a[k].email.toLowerCase()==id.toLowerCase())u=a[k];
+  if(!u){err("No account found. Sign up first.");return}
+  return h256(u.phone+pw).then(function(x){if(x!==u.h)err("Wrong password.");else fin({user:{name:u.name,phone:u.phone,email:u.email,demo:true}})});
+ }
+ if(!/^[6-9]\d{9}$/.test(b.phone)){err("Enter a valid 10-digit mobile number.");return}
+ if(mode=="signup"){
+  if(b.name.length<2){err("Enter your name.");return}
+  if(!EM.test(b.email)){err("Enter a valid email address.");return}
+  if(pw.length<8){err("Password must be at least 8 characters.");return}
+  if(DEMO){var a2=acc();if(a2[b.phone]){err("This number already has an account. Log in instead.");return}
+   return h256(b.phone+pw).then(function(x){a2[b.phone]={name:b.name,phone:b.phone,email:b.email,h:x};try{localStorage.setItem("sfpA",JSON.stringify(a2))}catch(e){}fin({user:{name:b.name,phone:b.phone,email:b.email,demo:true}})})}
+ }
+ if(step==1)return run(api("/api/otp/send",{b:b}),function(){step=2;draw();cool();$("otp").focus()});
+ var c=$("otp").value.replace(/\D/g,"");
+ if(c.length!=6){err("Enter the 6-digit code.");return}
+ if(pw.length<8){err("Password must be at least 8 characters.");return}
+ run(api(mode=="signup"?"/api/signup":"/api/reset",{b:{phone:b.phone,otp:c,password:pw}}),fin);
+};
+$("resend").onclick=function(){run(api("/api/otp/send",{b:body()}),cool)};
+$("tL").onclick=function(){setMode("login")};$("tS").onclick=function(){setMode("signup")};
+$("forgot").onclick=function(){setMode("reset")};
+$("eye").onclick=function(){var h=$("pw").type=="password";$("pw").type=h?"text":"password";$("eye").textContent=h?"Hide":"Show"};
+$("lo").onclick=function(){
+ if(T)api("/api/logout",{b:{}}).catch(function(){});
+ T=null;st(null);U=null;sv(null);["ln","lp","le"].forEach(function(i){$(i).value=""});setMode("login");who();showLogin();
+};
+draw();
+var FREE=2,PER=20,MAXKM=8,dmode="pickup";
+(function(){var h="";for(var d=2;d<=MAXKM;d++)h+='<option value="'+d+'">'+(d==2?"Up to 2 km (free)":d+" km (+"+rs(PER*(d-FREE))+" delivery)")+'</option>';$("km").innerHTML=h})();
+function dfee(){return dmode=="delivery"?PER*Math.max(0,+$("km").value-FREE):0}
+function dmin(){return dmode=="delivery"?(+$("km").value>=4?800:200):0}
+function sums(){var s=totals(),f=dfee();
+ $("sub").textContent=rs(s.t);$("feeR").hidden=dmode!="delivery";$("fee").textContent=f?rs(f):"Free";
+ $("sum").textContent=rs(s.t+f);$("dMin").textContent="Minimum order for this distance: "+rs(dmin())+". Pay when your order arrives."}
+function setD(m){dmode=m;$("mP").className=m=="pickup"?"on":"";$("mD").className=m=="delivery"?"on":"";$("dBox").hidden=m!="delivery";
+ $("tmL").textContent=m=="delivery"?"Delivery time":"Pickup time";$("send").textContent=m=="delivery"?"Place delivery order":"Place pickup order";$("err").textContent="";sums()}
+$("mP").onclick=function(){setD("pickup")};$("mD").onclick=function(){setD("delivery")};$("km").onchange=sums;
+function showDone(o){
+ $("dh").textContent="Order "+o.id+" placed ✓";$("dp").textContent=o.type=="delivery"?"Home delivery ("+o.km+" km) to: "+o.address+" · Delivery fee "+(o.fee?rs(o.fee):"free")+" · Total "+rs(o.total)+". Pay when it arrives.":"Pickup: "+o.pickup+" · Total "+rs(o.total)+". Pay at the counter.";$("ds").textContent=SL[o.status];
+ $("done").showModal();clearInterval(poll);
+ poll=setInterval(function(){api("/api/orders/mine").then(function(d){var x=d.orders.filter(function(z){return z.id==o.id})[0];
+  if(x){$("ds").textContent=SL[x.status];if(x.status=="done"||x.status=="cancelled")clearInterval(poll)}}).catch(function(){})},10000);
+}
+$("dx").onclick=function(){clearInterval(poll);$("done").close()};
+$("send").onclick=function(){
+ var ad=$("addr").value.trim(),sb=totals().t;
+ if(dmode=="delivery"){if(ad.length<8){$("err").textContent="Enter your full delivery address.";return}
+  if(sb<dmin()){$("err").textContent="Minimum order for delivery at this distance is "+rs(dmin())+".";return}}
+ if(DEMO&&U){var s=totals(),t="*New "+(dmode=="delivery"?"HOME DELIVERY":"pickup")+" order – Swaran Food Plaza*\n\n";for(var k in cart){var c=cart[k];t+=c.q+" x "+c.name+(c.size?" ("+c.size+")":"")+" – "+rs(c.q*c.price)+"\n"}t+=(dmode=="delivery"?"\nDelivery fee ("+$("km").value+" km): "+(dfee()?rs(dfee()):"Free")+"\nAddress: "+ad:"")+"\n*Total: "+rs(s.t+dfee())+"* ("+(dmode=="delivery"?"pay on delivery":"pay at pickup")+")\nName: "+U.name+"\nPhone: "+U.phone+"\nEmail: "+U.email+"\nPickup: "+$("tm").value;window.open("https://wa.me/918604933003?text="+encodeURIComponent(t),"_blank");return}
+ if(!T){$("dlg").close();showLogin();return}
+ var items=[];for(var k in cart){var c=cart[k];items.push({c:c.ref.c,g:c.ref.g,i:c.ref.i,s:c.ref.s,q:c.q})}
+ $("send").disabled=true;$("err").textContent="";
+ api("/api/orders",{b:{items:items,pickup:$("tm").value,type:dmode,km:+$("km").value,address:ad}}).then(function(d){cart={};upd();$("dlg").close();showDone(d.order)})
+ .catch(function(e){$("err").textContent=e.message}).then(function(){$("send").disabled=false});
+};
+fetch("/api/menu").then(function(r){return r.json()}).then(function(d){if(Array.isArray(d)){DEMO=false;draw();C=d;drawGrid();route()}}).catch(function(){});
+</script>
+</body>
+</html>
